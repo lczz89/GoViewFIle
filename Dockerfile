@@ -1,4 +1,5 @@
-FROM centos:7.2.1511
+FROM centos:7.9.2009
+#如果宿主机是centos，镜像版本尽量跟宿主机一致，不然yum install的时候可能出错
 MAINTAINER czc "651267218@qq.com"
 COPY fonts/* /usr/share/fonts/ChineseFonts/
 
@@ -40,6 +41,7 @@ COPY library/emailconverter-2.5.3-all.jar   /usr/local/emailconverter-2.5.3-all.
 #pdf 添加水印
 COPY library/pdfcpu    /usr/local/pdfcpu
 
+RUN chmod +x /usr/local/pdfcpu
 
 # 安装wkhtmltopdf 用于将eml（html）文件转pdf
 RUN yum -y install wget &&\
