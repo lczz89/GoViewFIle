@@ -13,8 +13,8 @@ ENV TZ=Asia/Shanghai
 RUN  yum install java -y
 
 RUN  yum  install deltarpm  -y  &&\          
-     yum install  libreoffice -y &&\
-     yum install libreoffice-headless -y &&\
+     yum install  libreoffice -y
+RUN  yum install libreoffice-headless -y &&\
      yum install libreoffice-writer -y &&\
      yum install ImageMagick -y  &&\
      export DISPLAY=:0.0     
@@ -22,8 +22,8 @@ RUN  yum  install deltarpm  -y  &&\
 
 
 # 添加应用可执行文件，并设置执行权限
-ADD main   $WORKDIR/main
-RUN chmod +x $WORKDIR/main
+#ADD main   $WORKDIR/main
+#RUN chmod +x $WORKDIR/main
 
 # 添加I18N多语言文件、静态文件、配置文件、模板文件
 ADD public   $WORKDIR/public
@@ -55,7 +55,7 @@ RUN yum -y install wget &&\
 ###############################################################################
 WORKDIR $WORKDIR
 # 如果需要进入容器调式，可以注释掉下面的CMD. 
-CMD  ./main  
+#CMD  ./main
 
 
 # ------------------------------------本地打包镜像---------------------
