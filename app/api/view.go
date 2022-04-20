@@ -251,7 +251,7 @@ func (a *ViewApi) Office(r *ghttp.Request) {
 // @param   entity "
 // @router  /view/Upload [POST]
 // @success 200 {object} response.JsonResponse "执行结果"
-func (a *ViewApi) Upload(r *ghttp.Request) {
+/*func (a *ViewApi) Upload(r *ghttp.Request) {
 	files := r.GetUploadFile("upload-file")
 	_, _ = files.Save("cache/local/")
 
@@ -260,7 +260,7 @@ func (a *ViewApi) Upload(r *ghttp.Request) {
 	view := r.GetView()
 	view.Assign("AllFile", allFile)
 	r.Response.WriteTpl("/index.html")
-}
+}*/
 
 // @summary 删除本地上传的文件
 // @tags    预览
