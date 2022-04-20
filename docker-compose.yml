@@ -9,4 +9,4 @@ services:
     entrypoint:
       - /var/www/GoViewFile/main
     ports:
-    - 8082:8082
+      - 8082:8082
